@@ -4,7 +4,7 @@ namespace TextFilter.Orchestrators
 {
     public class TextFilterOrchestrator : ITextFilterOrchestrator
     {
-        private readonly TextFilter _textFilter;
+        private readonly ITextFilter _textFilter;
 
         public TextFilterOrchestrator()
         {
