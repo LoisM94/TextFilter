@@ -10,6 +10,7 @@ namespace TextFilterUnitTests.StrategyUnitTests
         [Theory]
         [InlineData("a")]
         [InlineData("do")]
+        [InlineData(" do ")]
         [InlineData("by")]
         [InlineData("at")]
         [InlineData("it")]

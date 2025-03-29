@@ -8,14 +8,14 @@ namespace TextFilterUnitTests.StrategyUnitTests
         private readonly IFilterStrategy _filterStrategy = new VowelInMiddleFilterStrategy();
 
         [Theory]
-        [InlineData(" feel ")]
-        [InlineData(" jar ")]
-        [InlineData(" clean ")]
-        [InlineData(" made ")]
-        [InlineData(" ORANGE ")]
-        [InlineData(" down ")]
-        [InlineData(" very ")]
-        [InlineData(" cupboards ")]
+        [InlineData("feel")]
+        [InlineData("jar")]
+        [InlineData("clean")]
+        [InlineData("made")]
+        [InlineData("ORANGE")]
+        [InlineData("down")]
+        [InlineData("very")]
+        [InlineData("cupboards")]
         public void RequiresFilter_When_TextContainsVowelInMiddleOfWord_Then_ResultShouldReturnTrue(string wordWithVowelInMiddle)
         {
             // Act
@@ -31,6 +31,7 @@ namespace TextFilterUnitTests.StrategyUnitTests
         [InlineData("SHE")]
         [InlineData("and")]
         [InlineData("biginning")]
+        [InlineData("she.")]
         public void RequiresFilter_When_TextDoesNotContainsVowelInMiddleOfWord_Then_ResultShouldReturnFalse(string wordWithoutVowelInMiddle)
         {
             // Act

@@ -26,10 +26,10 @@ namespace TextFilterUnitTests.StrategyUnitTests
         }
 
         [Theory]
-        [InlineData(" bye ")]
-        [InlineData(" far, ")]
-        [InlineData(" considering ")]
-        [InlineData(" where ")]
+        [InlineData("bye")]
+        [InlineData("far,")]
+        [InlineData("considering")]
+        [InlineData("where")]
         public void RequiresFilter_When_TextContainsLetterT_Then_ResultShouldReturnFalse(string wordWithoutLetterT)
         {
             // Act
