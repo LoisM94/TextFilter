@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using TextFilter.Extensions;
 using TextFilter.Strategies;
 
 namespace TextFilter

@@ -1,5 +1,4 @@
 ﻿using TextFilter.Strategies;
-
 namespace TextFilter
 {
     public interface ITextFilter
