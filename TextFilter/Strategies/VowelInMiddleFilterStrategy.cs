@@ -9,11 +9,11 @@ namespace TextFilter.Strategies
 {
     public class VowelInMiddleFilterStrategy : IFilterStrategy
     {
-        private readonly List<char> _listOfVowels = new() { 'a', 'e', 'i', 'o', 'u' };
+        private readonly List<char> _listOfVowels = ['a', 'e', 'i', 'o', 'u'];
 
         public bool RequiresFilter(string word)
         {
-            var strippedWord = word.StripPunctuation();
+            var strippedWord = word.ToLower().Trim().StripPunctuation();
             decimal middlePositionInWord = strippedWord.Length / 2m;
 
             if (middlePositionInWord % 1 == 0)

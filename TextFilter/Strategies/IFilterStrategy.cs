@@ -2,6 +2,6 @@
 {
     public interface IFilterStrategy
     {
-        string RequiresFilter(string text);
+        bool RequiresFilter(string text);
     }
 }

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextFilter.Extensions;
 
 namespace TextFilter.Strategies
 {
-    public class LetterTFilterStrategy : IFilterStrategy
+    public class LessThanThreeCharFilterStrategy : IFilterStrategy
     {
         public bool RequiresFilter(string word)
         {
-            return word.ToLower().Contains('t');
+            return word.StripPunctuation().Trim().Length < 3;
         }
     }
 }
