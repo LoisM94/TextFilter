@@ -45,7 +45,9 @@ internal class Program
             var filteredText = _textFilterOrchestrator.FilterText(fileContent);
             _logger.LogInformation("Text filtering completed successfully");
 
+            Console.WriteLine("\r\nFiltered text:");
             Console.WriteLine(filteredText);
+            Console.WriteLine("\r\n");
         }
         catch (Exception ex)
         {
