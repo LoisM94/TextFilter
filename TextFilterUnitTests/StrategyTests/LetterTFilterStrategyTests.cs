@@ -27,6 +27,7 @@ namespace TextFilterUnitTests.StrategyUnitTests
 
         [Theory]
         [InlineData("bye")]
+        [InlineData("FEEL")]
         [InlineData("far,")]
         [InlineData("considering")]
         [InlineData("where")]

@@ -35,6 +35,7 @@ namespace TextFilterUnitTests.StrategyUnitTests
         [InlineData("far,")]
         [InlineData("considering")]
         [InlineData("where")]
+        [InlineData("FEEL")]
         public void RequiresFilter_When_TextContainsWordWithMoreThanThanThreeCharacters_Then_ResultShouldReturnFalse(string wordMoreThanThreeChars)
         {
             // Act

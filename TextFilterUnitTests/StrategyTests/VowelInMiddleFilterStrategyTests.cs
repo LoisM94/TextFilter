@@ -9,11 +9,13 @@ namespace TextFilterUnitTests.StrategyUnitTests
 
         [Theory]
         [InlineData("feel")]
+        [InlineData("feel ")]
         [InlineData("jar")]
         [InlineData("clean")]
         [InlineData("made")]
         [InlineData("ORANGE")]
         [InlineData("down")]
+        [InlineData("down,")]
         [InlineData("very")]
         [InlineData("cupboards")]
         public void RequiresFilter_When_TextContainsVowelInMiddleOfWord_Then_ResultShouldReturnTrue(string wordWithVowelInMiddle)
