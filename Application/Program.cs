@@ -1,6 +1,7 @@
 ﻿using Application.Features.TextFilter;
 using Application.Utilities;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 internal class Program
@@ -8,7 +9,6 @@ internal class Program
     private readonly IFileReader _fileReader;
     private readonly ITextFilterOrchestrator _textFilterOrchestrator;
     private readonly ILogger<Program> _logger;
-    private readonly string _filePath = ".\\Resources\\TextInput.txt";
 
     public Program(IFileReader fileReader, ITextFilterOrchestrator textFilterOrchestrator, ILogger<Program> logger)
     {
@@ -19,10 +19,14 @@ internal class Program
 
     public static void Main(string[] args)
     {
+        IConfiguration configuration = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .Build();
+
         var serviceProvider = new ServiceCollection()
             .AddLogging(builder => builder
                 .AddConsole()
-                .SetMinimumLevel(LogLevel.Information))
+                .AddConfiguration(configuration.GetSection("Logging")))
             .AddTransient<Program>()
             .AddTransient<IFileReader, FileReader>()
             .AddTransient<ITextFilterOrchestrator, TextFilterOrchestrator>()
@@ -31,15 +35,23 @@ internal class Program
 
         var program = serviceProvider.GetService<Program>();
 
-        program?.Run();
+        program?.Run(configuration);
     }
 
-    private void Run()
+    private void Run(IConfiguration configuration)
     {
         _logger.LogInformation("Application started");
         try
         {
-            var fileContent = _fileReader.ReadFile(_filePath);
+            var filePath = configuration.GetValue<string>("FilePath");
+            if(string.IsNullOrEmpty(filePath))
+            {
+                _logger.LogError("File path is not provided in the configuration");
+                return;
+            }
+
+            _logger.LogInformation("Reading file...");
+            var fileContent = _fileReader.ReadFile(filePath);
             _logger.LogInformation("File read successfully");
 
             _logger.LogInformation("Filtering text...");
