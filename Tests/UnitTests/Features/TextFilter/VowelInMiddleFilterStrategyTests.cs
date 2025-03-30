@@ -34,7 +34,7 @@ public class VowelInMiddleFilterStrategyTests
     [InlineData("and")]
     [InlineData("biginning")]
     [InlineData("she.")]
-    public void RequiresFilter_When_TextDoesNotContainsVowelInMiddleOfWord_Then_ResultShouldReturnFalse(string wordWithoutVowelInMiddle)
+    public void RequiresFilter_When_TextDoesNotContainVowelInMiddleOfWord_Then_ResultShouldReturnFalse(string wordWithoutVowelInMiddle)
     {
         // Act
         var result = _filterStrategy.RequiresFilter(wordWithoutVowelInMiddle);

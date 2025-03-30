@@ -10,10 +10,10 @@ internal class Program
     private readonly ILogger<Program> _logger;
     private readonly string _filePath = ".\\Files\\TextInput.txt";
 
-    public Program(IFileReader fileReader, ITextFilterOrchestrator textFilterService, ILogger<Program> logger)
+    public Program(IFileReader fileReader, ITextFilterOrchestrator textFilterOrchestrator, ILogger<Program> logger)
     {
         _fileReader = fileReader;
-        _textFilterOrchestrator = textFilterService;
+        _textFilterOrchestrator = textFilterOrchestrator;
         _logger = logger;
     }
 

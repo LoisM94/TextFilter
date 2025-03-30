@@ -31,7 +31,7 @@ public class LetterTFilterStrategyTests
     [InlineData("far,")]
     [InlineData("considering")]
     [InlineData("where")]
-    public void RequiresFilter_When_TextContainsLetterT_Then_ResultShouldReturnFalse(string wordWithoutLetterT)
+    public void RequiresFilter_When_TextDoesNotContainLetterT_Then_ResultShouldReturnFalse(string wordWithoutLetterT)
     {
         // Act
         var result = _filterStrategy.RequiresFilter(wordWithoutLetterT);
