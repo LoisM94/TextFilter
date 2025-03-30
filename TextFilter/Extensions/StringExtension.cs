@@ -1,18 +1,17 @@
 ﻿using System.Text;
 
-namespace Application.Extensions
+namespace Application.Extensions;
+
+public static class StringExtension
 {
-    public static class StringExtension
+    public static string StripPunctuation(this string s)
     {
-        public static string StripPunctuation(this string s)
+        var sb = new StringBuilder();
+        foreach (char c in s)
         {
-            var sb = new StringBuilder();
-            foreach (char c in s)
-            {
-                if (!char.IsPunctuation(c))
-                    sb.Append(c);
-            }
-            return sb.ToString();
+            if (!char.IsPunctuation(c))
+                sb.Append(c);
         }
+        return sb.ToString();
     }
 }

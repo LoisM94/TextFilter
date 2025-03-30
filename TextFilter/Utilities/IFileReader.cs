@@ -1,7 +1,6 @@
-﻿namespace Application.Utilities
+﻿namespace Application.Utilities;
+
+public interface IFileReader
 {
-    public interface IFileReader
-    {
-        string ReadFile(string filePath);
-    }
+    string ReadFile(string filePath);
 }

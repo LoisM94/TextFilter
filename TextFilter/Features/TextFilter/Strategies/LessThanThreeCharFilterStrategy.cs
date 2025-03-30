@@ -1,12 +1,11 @@
 ﻿using Application.Extensions;
 
-namespace Application.Features.TextFilter.Strategies
+namespace Application.Features.TextFilter.Strategies;
+
+public class LessThanThreeCharFilterStrategy : IFilterStrategy
 {
-    public class LessThanThreeCharFilterStrategy : IFilterStrategy
+    public bool RequiresFilter(string word)
     {
-        public bool RequiresFilter(string word)
-        {
-            return word.StripPunctuation().Trim().Length < 3;
-        }
+        return word.StripPunctuation().Trim().Length < 3;
     }
 }

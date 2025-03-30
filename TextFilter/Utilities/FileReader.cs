@@ -1,29 +1,28 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Application.Utilities
+namespace Application.Utilities;
+
+public class FileReader : IFileReader
 {
-    public class FileReader : IFileReader
+    private readonly ILogger<FileReader> _logger;
+
+    public FileReader(ILogger<FileReader> logger)
     {
-        private readonly ILogger<FileReader> _logger;
+        _logger = logger;
+    }
 
-        public FileReader(ILogger<FileReader> logger)
+    public string ReadFile(string filePath)
+    {
+        _logger.LogInformation($"Reading file from path: {filePath}");
+        try
         {
-            _logger = logger;
+            using StreamReader reader = new(filePath);
+            return reader.ReadToEnd();
         }
-
-        public string ReadFile(string filePath)
+        catch (Exception ex)
         {
-            _logger.LogInformation($"Reading file from path: {filePath}");
-            try
-            {
-                using StreamReader reader = new(filePath);
-                return reader.ReadToEnd();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while reading the file");
-                throw;
-            }
+            _logger.LogError(ex, "An error occurred while reading the file");
+            throw;
         }
     }
 }

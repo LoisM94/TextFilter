@@ -1,10 +1,9 @@
-﻿namespace Application.Features.TextFilter.Strategies
+﻿namespace Application.Features.TextFilter.Strategies;
+
+public class LetterTFilterStrategy : IFilterStrategy
 {
-    public class LetterTFilterStrategy : IFilterStrategy
+    public bool RequiresFilter(string word)
     {
-        public bool RequiresFilter(string word)
-        {
-            return word.ToLower().Contains('t');
-        }
+        return word.ToLower().Contains('t');
     }
 }

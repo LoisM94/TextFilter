@@ -1,7 +1,6 @@
-﻿namespace Application.Features.TextFilter.Strategies
+﻿namespace Application.Features.TextFilter.Strategies;
+
+public interface IFilterStrategy
 {
-    public interface IFilterStrategy
-    {
-        bool RequiresFilter(string text);
-    }
+    bool RequiresFilter(string text);
 }

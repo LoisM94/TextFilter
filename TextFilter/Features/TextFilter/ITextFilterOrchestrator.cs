@@ -1,7 +1,6 @@
-﻿namespace Application.Features.TextFilter
+﻿namespace Application.Features.TextFilter;
+
+public interface ITextFilterOrchestrator
 {
-    public interface ITextFilterOrchestrator
-    {
-        string FilterText(string inputText);
-    }
+    string FilterText(string inputText);
 }

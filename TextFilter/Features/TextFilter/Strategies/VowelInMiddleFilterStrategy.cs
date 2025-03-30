@@ -1,28 +1,27 @@
 ﻿using Application.Extensions;
 
-namespace Application.Features.TextFilter.Strategies
+namespace Application.Features.TextFilter.Strategies;
+
+public class VowelInMiddleFilterStrategy : IFilterStrategy
 {
-    public class VowelInMiddleFilterStrategy : IFilterStrategy
+    private readonly List<char> _listOfVowels = ['a', 'e', 'i', 'o', 'u'];
+
+    public bool RequiresFilter(string word)
     {
-        private readonly List<char> _listOfVowels = ['a', 'e', 'i', 'o', 'u'];
+        var strippedWord = word.ToLower().Trim().StripPunctuation();
+        decimal middlePositionInWord = strippedWord.Length / 2m;
 
-        public bool RequiresFilter(string word)
+        if (middlePositionInWord % 1 == 0)
         {
-            var strippedWord = word.ToLower().Trim().StripPunctuation();
-            decimal middlePositionInWord = strippedWord.Length / 2m;
+            var firstMiddlePositionInWord = strippedWord[(int)middlePositionInWord - 1];
+            var secondMiddlePositionInWord = strippedWord[(int)middlePositionInWord];
 
-            if (middlePositionInWord % 1 == 0)
-            {
-                var firstMiddlePositionInWord = strippedWord[(int)middlePositionInWord - 1];
-                var secondMiddlePositionInWord = strippedWord[(int)middlePositionInWord];
-
-                return _listOfVowels.Contains(firstMiddlePositionInWord) || _listOfVowels.Contains(secondMiddlePositionInWord);
-            }
-            else
-            {
-                var middlePosition = strippedWord[(int)Math.Floor(middlePositionInWord)];
-                return _listOfVowels.Contains(middlePosition);
-            }
+            return _listOfVowels.Contains(firstMiddlePositionInWord) || _listOfVowels.Contains(secondMiddlePositionInWord);
+        }
+        else
+        {
+            var middlePosition = strippedWord[(int)Math.Floor(middlePositionInWord)];
+            return _listOfVowels.Contains(middlePosition);
         }
     }
 }
