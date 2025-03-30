@@ -1,9 +1,9 @@
-﻿using System.Text;
-using TextFilter.Strategies;
+﻿using Application.Features.TextFilter.Strategies;
+using System.Text;
 
-namespace TextFilter.Features.TextFilter
+namespace Application.Features.TextFilter
 {
-    public class TextFilter : ITextFilter
+    public class TextFilterProcessor : ITextFilterProcessor
     {
         private readonly List<IFilterStrategy> _filterStrategies = new();
         private readonly char[]? DelimiterChars = { ' ', ',', '.', ':', ';' };

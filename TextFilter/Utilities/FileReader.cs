@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace TextFilter
+namespace Application.Utilities
 {
     public class FileReader : IFileReader
     {

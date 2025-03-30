@@ -1,4 +1,4 @@
-﻿namespace TextFilter.Orchestrators
+﻿namespace Application.Features.TextFilter
 {
     public interface ITextFilterOrchestrator
     {

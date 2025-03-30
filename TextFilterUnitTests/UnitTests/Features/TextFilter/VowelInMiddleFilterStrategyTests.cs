@@ -1,7 +1,7 @@
-﻿using FluentAssertions;
-using TextFilter.Strategies;
+﻿using Application.Features.TextFilter.Strategies;
+using FluentAssertions;
 
-namespace TextFilterUnitTests.StrategyUnitTests
+namespace Tests.UnitTests.Features.TextFilter
 {
     public class VowelInMiddleFilterStrategyTests
     {

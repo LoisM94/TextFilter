@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace TextFilter.Extensions
+namespace Application.Extensions
 {
     public static class StringExtension
     {

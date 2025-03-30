@@ -1,4 +1,4 @@
-﻿namespace TextFilter.Strategies
+﻿namespace Application.Features.TextFilter.Strategies
 {
     public class LetterTFilterStrategy : IFilterStrategy
     {

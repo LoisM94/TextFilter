@@ -1,6 +1,6 @@
-﻿using TextFilter.Extensions;
+﻿using Application.Extensions;
 
-namespace TextFilter.Strategies
+namespace Application.Features.TextFilter.Strategies
 {
     public class VowelInMiddleFilterStrategy : IFilterStrategy
     {

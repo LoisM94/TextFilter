@@ -1,4 +1,4 @@
-﻿namespace TextFilter
+﻿namespace Application.Utilities
 {
     public interface IFileReader
     {

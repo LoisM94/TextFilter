@@ -1,15 +1,14 @@
-﻿using TextFilter.Features.TextFilter;
-using TextFilter.Strategies;
+﻿using Application.Features.TextFilter.Strategies;
 
-namespace TextFilter.Orchestrators
+namespace Application.Features.TextFilter
 {
     public class TextFilterOrchestrator : ITextFilterOrchestrator
     {
-        private readonly ITextFilter _textFilter;
+        private readonly ITextFilterProcessor _textFilter;
 
-        public TextFilterOrchestrator()
+        public TextFilterOrchestrator(ITextFilterProcessor textFilter)
         {
-            _textFilter = new Features.TextFilter.TextFilter();
+            _textFilter = textFilter;
             _textFilter.AddFilterStrategy(new LessThanThreeCharFilterStrategy());
             _textFilter.AddFilterStrategy(new VowelInMiddleFilterStrategy());
             _textFilter.AddFilterStrategy(new LetterTFilterStrategy());

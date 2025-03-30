@@ -1,13 +1,13 @@
-﻿using FluentAssertions;
-using TextFilter.Features.TextFilter;
-using TextFilter.Strategies;
+﻿using Application.Features.TextFilter;
+using Application.Features.TextFilter.Strategies;
+using FluentAssertions;
 
-namespace TextFilterUnitTests
+namespace Tests.UnitTests.Features.TextFilter
 {
     [Trait("Category", "Unit")]
     public class TextFilterTests
     {
-        private readonly ITextFilter _textFilter;
+        private readonly ITextFilterProcessor _textFilter;
         private readonly List<IFilterStrategy> _filterStrategies;
         public TextFilterTests()
         {
@@ -18,7 +18,7 @@ namespace TextFilterUnitTests
                 new LetterTFilterStrategy()
             ];
 
-            _textFilter = new TextFilter.Features.TextFilter.TextFilter();
+            _textFilter = new TextFilterProcessor();
             _filterStrategies.ForEach(strategy => _textFilter.AddFilterStrategy(strategy));
         }
 

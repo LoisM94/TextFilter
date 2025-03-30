@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Application.Features.TextFilter;
+using Application.Utilities;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using TextFilter;
-using TextFilter.Orchestrators;
 
 internal class Program
 {
@@ -26,6 +26,7 @@ internal class Program
             .AddTransient<Program>()
             .AddTransient<IFileReader, FileReader>()
             .AddTransient<ITextFilterOrchestrator, TextFilterOrchestrator>()
+            .AddTransient<ITextFilterProcessor, TextFilterProcessor>()
             .BuildServiceProvider();
 
         var program = serviceProvider.GetService<Program>();
