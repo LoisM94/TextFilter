@@ -5,6 +5,7 @@ using Moq;
 
 namespace Tests.ComponentTests.Features.TextFilter;
 
+[Trait("Category", "Component")]
 public class TextFilterProcessorTests
 {
     private Mock<IFilterStrategy> _mockFilterStrategy = new();

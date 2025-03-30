@@ -1,6 +1,7 @@
 ﻿using Application.Features.TextFilter;
 using Application.Features.TextFilter.Strategies;
 using FluentAssertions;
+using Tests.Helper;
 
 namespace Tests.UnitTests.Features.TextFilter;
 
@@ -34,12 +35,8 @@ public class TextFilterTests
     [InlineData(" killing ")]
     public void TextFilter_When_TextDoesNotRequireAnyFiltering_Then_ResultShouldContainWord(string word)
     {
-        // Arrange
-        using StreamReader arrangeReader = new(".\\Files\\Txt.txt");
-        var setupTextFile = arrangeReader.ReadToEnd();
-
         // Act
-        var result = _textFilter.FilterText(setupTextFile);
+        var result = _textFilter.FilterText(TestData.TextInputTestData);
 
         // Assert
         result.Should().Contain(word);
@@ -57,12 +54,8 @@ public class TextFilterTests
     [InlineData(" what ")]
     public void TextFilter_When_TextDoesRequireFiltering_Then_ResultShouldNotContainWord(string word)
     {
-        // Arrange
-        using StreamReader arrangeReader = new(".\\Files\\Txt.txt");
-        var setupTextFile = arrangeReader.ReadToEnd();
-
         // Act
-        var result = _textFilter.FilterText(setupTextFile);
+        var result = _textFilter.FilterText(TestData.TextInputTestData);
 
         // Assert
         result.Should().NotContain(word);

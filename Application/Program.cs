@@ -8,7 +8,7 @@ internal class Program
     private readonly IFileReader _fileReader;
     private readonly ITextFilterOrchestrator _textFilterOrchestrator;
     private readonly ILogger<Program> _logger;
-    private readonly string _filePath = ".\\Files\\TextInput.txt";
+    private readonly string _filePath = ".\\Resources\\TextInput.txt";
 
     public Program(IFileReader fileReader, ITextFilterOrchestrator textFilterOrchestrator, ILogger<Program> logger)
     {

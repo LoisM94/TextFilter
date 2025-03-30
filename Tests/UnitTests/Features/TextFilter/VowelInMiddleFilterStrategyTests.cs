@@ -3,6 +3,7 @@ using FluentAssertions;
 
 namespace Tests.UnitTests.Features.TextFilter;
 
+[Trait("Category", "Unit")]
 public class VowelInMiddleFilterStrategyTests
 {
     private readonly IFilterStrategy _filterStrategy = new VowelInMiddleFilterStrategy();

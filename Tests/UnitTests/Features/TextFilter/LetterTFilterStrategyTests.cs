@@ -3,6 +3,7 @@ using FluentAssertions;
 
 namespace Tests.UnitTests.Features.TextFilter;
 
+[Trait("Category", "Unit")]
 public class LetterTFilterStrategyTests
 {
     private readonly IFilterStrategy _filterStrategy = new LetterTFilterStrategy();
