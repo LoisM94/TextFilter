@@ -1,7 +1,7 @@
 ﻿using Application.Features.TextFilter;
 using Application.Utilities;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 internal class Program
@@ -44,7 +44,7 @@ internal class Program
         try
         {
             var filePath = configuration.GetValue<string>("FilePath");
-            if(string.IsNullOrEmpty(filePath))
+            if (string.IsNullOrEmpty(filePath))
             {
                 _logger.LogError("File path is not provided in the configuration");
                 return;

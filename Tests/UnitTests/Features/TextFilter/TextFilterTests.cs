@@ -1,7 +1,7 @@
 ﻿using Application.Features.TextFilter;
 using Application.Features.TextFilter.Strategies;
 using FluentAssertions;
-using Tests.Helper;
+using Tests.Helpers;
 
 namespace Tests.UnitTests.Features.TextFilter;
 

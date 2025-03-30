@@ -1,4 +1,4 @@
-﻿namespace Tests.Helper;
+﻿namespace Tests.Helpers;
 
 public static class TestData
 {
