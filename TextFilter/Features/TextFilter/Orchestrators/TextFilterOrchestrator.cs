@@ -1,4 +1,5 @@
-﻿using TextFilter.Strategies;
+﻿using TextFilter.Features.TextFilter;
+using TextFilter.Strategies;
 
 namespace TextFilter.Orchestrators
 {
@@ -8,7 +9,7 @@ namespace TextFilter.Orchestrators
 
         public TextFilterOrchestrator()
         {
-            _textFilter = new TextFilter();
+            _textFilter = new Features.TextFilter.TextFilter();
             _textFilter.AddFilterStrategy(new LessThanThreeCharFilterStrategy());
             _textFilter.AddFilterStrategy(new VowelInMiddleFilterStrategy());
             _textFilter.AddFilterStrategy(new LetterTFilterStrategy());

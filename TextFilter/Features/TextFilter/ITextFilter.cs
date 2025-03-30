@@ -1,5 +1,5 @@
 ﻿using TextFilter.Strategies;
-namespace TextFilter
+namespace TextFilter.Features.TextFilter
 {
     public interface ITextFilter
     {

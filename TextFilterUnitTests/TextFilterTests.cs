@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using TextFilter;
+using TextFilter.Features.TextFilter;
 using TextFilter.Strategies;
 
 namespace TextFilterUnitTests
@@ -18,7 +18,7 @@ namespace TextFilterUnitTests
                 new LetterTFilterStrategy()
             ];
 
-            _textFilter = new TextFilter.TextFilter();
+            _textFilter = new TextFilter.Features.TextFilter.TextFilter();
             _filterStrategies.ForEach(strategy => _textFilter.AddFilterStrategy(strategy));
         }
 

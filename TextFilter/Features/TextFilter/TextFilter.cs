@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using TextFilter.Strategies;
 
-namespace TextFilter
+namespace TextFilter.Features.TextFilter
 {
     public class TextFilter : ITextFilter
     {
@@ -22,6 +22,7 @@ namespace TextFilter
             {
                 if (_filterStrategies.Any(strategy => strategy.RequiresFilter(word)))
                 {
+                    // If the word requires filtering don't append to the String Builder 
                     continue;
                 }
 
