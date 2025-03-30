@@ -20,7 +20,7 @@ This project is designed to filter text based on custom-defined strategies. It p
 ## How to Use
 
 ### Prerequisites
-- .NET 6 or higher.
+- .NET 8 or higher.
 - Visual Studio 2022 or any compatible IDE.
 
 ### Running the Project
