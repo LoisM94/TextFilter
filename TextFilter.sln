@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "TextFilter\Application.csproj", "{5BCC95BA-9D1C-4079-A908-D43FCE1DE863}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{5BCC95BA-9D1C-4079-A908-D43FCE1DE863}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "TextFilterUnitTests\Tests.csproj", "{9FA84BC9-FFA3-4E28-B054-BA5637B77388}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{9FA84BC9-FFA3-4E28-B054-BA5637B77388}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
